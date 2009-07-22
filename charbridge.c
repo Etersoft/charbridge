@@ -13,6 +13,7 @@
 #include <linux/poll.h>
 #include <asm/uaccess.h>    /* определения функций get_user и put_user */
 #include <linux/pipe_fs_i.h>
+#include <linux/version.h>
 
 #include "charbridge.h"
 #define SUCCESS 0
@@ -564,10 +565,14 @@ int init_module()
  */
 void cleanup_module()
 {
-	int ret;
+	int ret = 0;
 
 	// Дерегистрация устройства
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,23)
+	unregister_chrdev(dev_major, DEVICE_FILE_NAME);
+#else
 	ret = unregister_chrdev(dev_major, DEVICE_FILE_NAME);
+#endif
 
 	// Если обнаружена ошибка -- вывести сообщение
 	if (ret < 0)
