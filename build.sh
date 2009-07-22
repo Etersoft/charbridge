@@ -2,8 +2,8 @@
 
 #kversion=2.6.16
 #kversion=2.6.12
-kversion=2.6.28
-flavour=lks-wks
+kversion=2.6.30
+flavour=std-pae
 . /usr/src/linux-$kversion-$flavour/gcc_version.inc
 
 PWD=`pwd`
