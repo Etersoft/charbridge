@@ -11,8 +11,7 @@ Summary: Sources for 'charbridge' kernel module
 
 License: GPL
 Group: Development/Kernel
-URL: http://git.etersoft.ru
-
+URL: https://git.etersoft.ru/projects/?p=asu/charbridge.git;a=summary
 BuildArch: noarch
 
 BuildPreReq: kernel-build-tools

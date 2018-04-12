@@ -18,7 +18,7 @@ Summary: charbridge kernel module
 
 License: Distributable
 Group: System/Kernel and hardware
-URL: http://git.etersoft.ru
+URL: https://git.etersoft.ru/projects/?p=asu/charbridge.git;a=summary
 
 Packager: Kernel Maintainer Team <kernel@packages.altlinux.org>
 
