@@ -1,17 +1,18 @@
 /*
- *  charbridge.c - Пример создания символьного устройства
- *              	доступного на запись/чтение
+ * charbridge.c - 'символьный мост'
+ * переброс char между sideA и sideB (двумя файлами устройств).
+ * Основное предназначение отладка процессов работы с RS (или символьными устройствами)
+ * При этом скорость обмена и другие параметры не имитируются. 
  *
- * Пример взят с: http://www.opennet.ru/docs/RUS/lkmpg26/
- * и модифицирован
+ * Модуль написан на основе учебного примера http://www.opennet.ru/docs/RUS/lkmpg26/
  */
 
-#include <linux/module.h> /* Необходимо для любого модуля */
-#include <linux/kernel.h> /* Все-таки мы работаем с ядром! */
+#include <linux/module.h>
+#include <linux/kernel.h>
 #include <linux/fs.h>
-#include <linux/sched.h>    /* Взаимодействие с планировщиком */
+#include <linux/sched.h>
 #include <linux/poll.h>
-#include <asm/uaccess.h>    /* определения функций get_user и put_user */
+#include <asm/uaccess.h>
 #include <linux/pipe_fs_i.h>
 #include <linux/version.h>
 
