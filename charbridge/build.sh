@@ -2,7 +2,7 @@
 
 #kversion=2.6.16
 #kversion=2.6.12
-kversion=2.6.27
+kversion=4.9.93
 flavour=std-def
 . /usr/src/linux-$kversion-$flavour/gcc_version.inc
 

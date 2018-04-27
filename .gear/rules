@@ -1,2 +1,4 @@
 tar: charbridge
 spec: kernel-source-charbridge.spec
+copy: *.rules
+copy: charbridge.sh

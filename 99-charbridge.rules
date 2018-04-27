@@ -1,0 +1,2 @@
+ACTION=="add", DEVPATH=="/module/charbridge" SUBSYSTEM=="module" RUN="/usr/local/bin/charbridge.sh add"
+ACTION=="remove", DEVPATH=="/module/charbridge" SUBSYSTEM=="module" RUN="/usr/local/bin/charbridge.sh remove"
