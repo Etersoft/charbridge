@@ -83,8 +83,7 @@ main()
   int file_desc, ret_val;
   char *msg = "Это сообщение передается через ioctl\n";
 
-//  file_desc = open(DEVICE_FILE_NAME, 0);
-  file_desc = open("/dev/cbsideA", 0);
+  file_desc = open("/dev/cbsideA0", 0);
   if (file_desc < 0) {
     printf("Невозможно открыть файл устройства: %s\n", DEVICE_FILE_NAME);
 	printf("With error(%d): %s\n", errno, strerror(errno));
