@@ -1,15 +1,20 @@
 #!/bin/sh
 
-#kversion=2.6.16
-#kversion=2.6.12
-kversion=4.9.93
-flavour=std-def
-. /usr/src/linux-$kversion-$flavour/gcc_version.inc
+# Usage: ./build.sh [kversion-flavour]
+
+#kf=$(uname -r | sed -e "s|-alt.*||")
+kf=$(uname -r)
+[ -n "$1" ] && kf="$1"
+
+if [ ! -d /usr/src/linux-$kf ] ; then
+    echo "No such sources: /usr/src/linux-$kf"
+    echo "Check the dir list:"
+    ls -1d /usr/src/linux-*
+    exit 1
+fi
+
+. /usr/src/linux-$kf/gcc_version.inc
 
 PWD=`pwd`
 
-#make -C /usr/src/linux SUBDIRS=$PWD V=1 modules
-make -C /usr/src/linux-$kversion-$flavour SUBDIRS=$PWD V=1 modules
-
-# пока не реализован..
-#gcc -o ioctl ioctl.c
+make -C /usr/src/linux-$kf SUBDIRS=$PWD V=1 modules
