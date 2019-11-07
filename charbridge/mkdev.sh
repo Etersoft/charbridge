@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TYPE="253"
+TYPE="248"
 
 for num in `seq 0 9`; do
 
