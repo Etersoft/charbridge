@@ -17,4 +17,4 @@ fi
 
 PWD=`pwd`
 
-make -C /usr/src/linux-$kf SUBDIRS=$PWD V=1 modules
+make -C /usr/src/linux-$kf M=$PWD V=1
